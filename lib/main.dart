@@ -31,7 +31,8 @@ class _MainScreenState extends State<MainScreen> {
         child: Column(
           children: [
             Expanded(
-                child: ColorViewer(r: r.toInt(), g: g.toInt(), b: b.toInt())),
+              child: ColorViewer(r: r.toInt(), g: g.toInt(), b: b.toInt()),
+            ),
             ColorSlider(
               color: BaseColor.red,
               value: r,
