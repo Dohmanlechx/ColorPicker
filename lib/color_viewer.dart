@@ -14,15 +14,18 @@ class ColorViewer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final newColor = Color.fromRGBO(r, g, b, 1.0);
+
     return Container(
       width: double.infinity,
-      height: 200,
-      color: Color.fromRGBO(r, g, b, 1.0),
+      color: newColor,
       child: Center(
-          child: Text(
-        'Red: $r, Green: $g, Blue: $b',
-        style: TextStyle(color: Colors.white),
-      )),
+        child: Text(
+          'Red: $r, Green: $g, Blue: $b\nHexcode: ${newColor.value.toRadixString(16)}',
+          style: TextStyle(color: Colors.white, backgroundColor: Colors.black),
+          textAlign: TextAlign.center,
+        ),
+      ),
     );
   }
 }
