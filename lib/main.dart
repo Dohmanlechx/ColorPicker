@@ -9,11 +9,7 @@ void main() {
 
 class ColorPicker extends StatelessWidget {
   @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      home: MainScreen(),
-    );
-  }
+  Widget build(BuildContext context) => MaterialApp(home: MainScreen());
 }
 
 class MainScreen extends StatefulWidget {
@@ -31,34 +27,35 @@ class _MainScreenState extends State<MainScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: SafeArea(
-      child: Column(
-        children: [
-          Expanded(
-              child: ColorViewer(r: r.toInt(), g: g.toInt(), b: b.toInt())),
-          ColorSlider(
-            color: BaseColor.red,
-            value: r,
-            onChanged: (double value) {
-              setState(() => r = value);
-            },
-          ),
-          ColorSlider(
-            color: BaseColor.green,
-            value: g,
-            onChanged: (double value) {
-              setState(() => g = value);
-            },
-          ),
-          ColorSlider(
-            color: BaseColor.blue,
-            value: b,
-            onChanged: (double value) {
-              setState(() => b = value);
-            },
-          )
-        ],
+      body: SafeArea(
+        child: Column(
+          children: [
+            Expanded(
+                child: ColorViewer(r: r.toInt(), g: g.toInt(), b: b.toInt())),
+            ColorSlider(
+              color: BaseColor.red,
+              value: r,
+              onChanged: (double value) {
+                setState(() => r = value);
+              },
+            ),
+            ColorSlider(
+              color: BaseColor.green,
+              value: g,
+              onChanged: (double value) {
+                setState(() => g = value);
+              },
+            ),
+            ColorSlider(
+              color: BaseColor.blue,
+              value: b,
+              onChanged: (double value) {
+                setState(() => b = value);
+              },
+            )
+          ],
+        ),
       ),
-    ));
+    );
   }
 }

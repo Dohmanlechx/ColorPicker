@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:color_picker/color.dart';
 import 'package:flutter/material.dart';
 
@@ -34,13 +36,14 @@ class ColorSlider extends StatelessWidget {
   }
 
   Color getActiveColor(BaseColor baseColor) {
+    final baseColorValue = max(150, value.toInt());
     switch (baseColor) {
       case BaseColor.red:
-        return Colors.red;
+        return Color.fromRGBO(baseColorValue, 0, 0, 1.0);
       case BaseColor.green:
-        return Colors.green;
+        return Color.fromRGBO(0, baseColorValue, 0, 1.0);
       case BaseColor.blue:
-        return Colors.blue;
+        return Color.fromRGBO(0, 0, baseColorValue, 1.0);
     }
   }
 }
